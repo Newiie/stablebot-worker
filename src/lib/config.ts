@@ -15,10 +15,10 @@ export const envconfig = envalid.cleanEnv(process.env, {
     WORKER_DB_NAME: envalid.num(),
     WORKER_DB_USERNAME: envalid.str(),
     WORKER_DB_PASSWORD: envalid.str(),
-    CHAIN_1_RPC: envalid.str(),
-    CHAIN_84532_RPC: envalid.str({ default: "" }),
-    CHAIN_TRON_RPC: envalid.str(),
-    CHAIN_TRON_TESTNET_RPC: envalid.str({ default: "" }),
+    CHAIN_RPC_1: envalid.str(),
+    CHAIN_RPC_84532: envalid.str({ default: "" }),
+    CHAIN_RPC_TRON: envalid.str(),
+    CHAIN_RPC_SHASTA: envalid.str({ default: "" }),
 })
 export const MAINNET_TOKENS: ITokenMetaData[] = [
     {
@@ -85,7 +85,7 @@ export const TESTNET_CHAINS: IChain[] = [
         symbol: "ETH",
         nativeTokenAddress: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
         nativeTokenDecimal: 18,
-        rpc: envconfig.CHAIN_84532_RPC,
+        rpc: envconfig.CHAIN_RPC_84532,
         coingeckoId: "ethereum",
         geckoTerminalId: "eth",
         isTestNet: true,
@@ -106,7 +106,7 @@ export const TESTNET_CHAINS: IChain[] = [
         symbol: "TRX",
         nativeTokenAddress: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
         nativeTokenDecimal: 6,
-        rpc: envconfig.CHAIN_TRON_TESTNET_RPC,
+        rpc: envconfig.CHAIN_RPC_SHASTA,
         coingeckoId: "tron",
         explorer: {
             accountPath: "/address/",
@@ -123,7 +123,7 @@ export const MAINNET_CHAINS: IChain[] = [
         symbol: "ETH",
         nativeTokenAddress: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
         nativeTokenDecimal: 18,
-        rpc: envconfig.CHAIN_1_RPC,
+        rpc: envconfig.CHAIN_RPC_1,
         coingeckoId: "ethereum",
         geckoTerminalId: "eth",
         explorer: {
@@ -143,7 +143,7 @@ export const MAINNET_CHAINS: IChain[] = [
         symbol: "TRX",
         nativeTokenAddress: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
         nativeTokenDecimal: 6,
-        rpc: envconfig.CHAIN_TRON_RPC,
+        rpc: envconfig.CHAIN_RPC_TRON,
         coingeckoId: "tron",
         explorer: {
             accountPath: "/address/",
