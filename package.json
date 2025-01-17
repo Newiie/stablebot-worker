@@ -22,7 +22,7 @@
     "envalid": "^8.0.0",
     "grammy": "^1.34.0",
     "lodash": "^4.17.21",
-    "mongoose": "^8.9.3",
+    "mongoose": "^8.9.5",
     "tronweb": "^6.0.0",
     "viem": "^2.22.2"
   }
