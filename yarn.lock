@@ -26,6 +26,11 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
+"@grammyjs/parse-mode@^1.11.1":
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@grammyjs/parse-mode/-/parse-mode-1.11.1.tgz#0287d43cce98290041d9bcec4ef679b7ba548fa7"
+  integrity sha512-7yEKVtXjNZsG8EX/AOtgR/7Af5QxcmAcTB31Nju+QELvL2uSQMJKlix5rkx695gqocUodLwWtuwCDGDoXGD2xg==
+
 "@grammyjs/types@3.18.0":
   version "3.18.0"
   resolved "https://registry.yarnpkg.com/@grammyjs/types/-/types-3.18.0.tgz#2f6f474e29e0a1a96883fb93e6d97a8e77f45bde"

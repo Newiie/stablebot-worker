@@ -9,6 +9,8 @@ export const envconfig = envalid.cleanEnv(process.env, {
     TELEGRAM_API_SERVER: envalid.str(),
     BOT_SECRET_TOKEN: envalid.str(),
     MONGODB_URI: envalid.str(),
+    DEX_ENDPOINT: envalid.url(),
+    DEX_API_KEY: envalid.str(),
     ENCRYPTION_KEY: envalid.str(),
     WORKER_DB_HOST: envalid.str(),
     WORKER_DB_PORT: envalid.port(),
@@ -19,6 +21,7 @@ export const envconfig = envalid.cleanEnv(process.env, {
     CHAIN_RPC_84532: envalid.str({ default: "" }),
     CHAIN_RPC_TRON: envalid.str(),
     CHAIN_RPC_SHASTA: envalid.str({ default: "" }),
+
 })
 export const MAINNET_TOKENS: ITokenMetaData[] = [
     {

@@ -23,5 +23,7 @@ export class Utils {
     getChain(chainId: string) {
         return DEFAULT_CHAINS.find(e => chainId.toLowerCase().trim() === e.chainId.toLowerCase().trim())
     }
+    unitToUsd = (unitAmount: number, unitPrice: number) => unitAmount * unitPrice
+    usdToUnit = (usdAmount: number, unitPrice: number) => usdAmount / unitPrice
 }
 export const utils = new Utils()

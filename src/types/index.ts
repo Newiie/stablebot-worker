@@ -31,7 +31,7 @@ export interface ITokenMetaData {
     icon?: string
 }
 export interface ITokenInfo extends ITokenMetaData {
-    priceUsd: string
+    priceUSD: string
 }
 
 export interface IChain {

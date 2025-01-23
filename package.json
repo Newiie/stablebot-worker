@@ -16,6 +16,7 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "@grammyjs/parse-mode": "^1.11.1",
     "bullmq": "^5.34.5",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.7",

@@ -4,10 +4,14 @@ import { tasksHandler } from './tasks';
 import dbConnect from './models/dbConnect';
 new Worker('main',
     async (job: Job) => {
+        console.log(job.name)
         switch (job.name) {
             case "balance":
                 await tasksHandler.updateBalance(job)
                 break;
+            case "sendMessage":
+                await tasksHandler.bot.sendMessage(job)
+                break
             default:
                 break;
         }
