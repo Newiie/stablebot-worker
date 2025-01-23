@@ -3,6 +3,7 @@ if (process.env.NODE_ENV !== "production") config()
 import * as envalid from 'envalid'
 import type { IChain, ITokenMetaData, IWallet } from '../types'
 export const envconfig = envalid.cleanEnv(process.env, {
+    ENABLE_TESTNETS: envalid.bool({ default: false }),
     PORT: envalid.num({ default: 3000 }),
     BOT_TOKEN: envalid.str(),
     BOT_WEBHOOK_URI: envalid.str(),
@@ -79,7 +80,7 @@ export const TESTNET_TOKENS: ITokenMetaData[] = [
         emoji: "💠"
     }
 ]
-export const DEFAULT_TOKENS: ITokenMetaData[] = [...MAINNET_TOKENS, ...TESTNET_TOKENS]
+export const DEFAULT_TOKENS: ITokenMetaData[] = envconfig.ENABLE_TESTNETS ? [...MAINNET_TOKENS, ...TESTNET_TOKENS] : MAINNET_TOKENS
 export const TESTNET_CHAINS: IChain[] = [
     {
         chainId: "84532",
@@ -155,4 +156,4 @@ export const MAINNET_CHAINS: IChain[] = [
         },
     }
 ]
-export const DEFAULT_CHAINS: IChain[] = [...TESTNET_CHAINS, ...MAINNET_CHAINS]
+export const DEFAULT_CHAINS: IChain[] = envconfig.ENABLE_TESTNETS ? [...TESTNET_CHAINS, ...MAINNET_CHAINS] : MAINNET_CHAINS
