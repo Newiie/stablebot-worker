@@ -29,7 +29,7 @@ if $REMOVE_IMAGES; then
         echo "No docker images found"
     fi
 fi
-DOCKER_TAG_NAME="stablebot"
+DOCKER_TAG_NAME="stablebot-worker"
 echo "Building docker image"
 docker build -t $DOCKER_TAG_NAME . 
 echo "Deploying Stable Bot"
