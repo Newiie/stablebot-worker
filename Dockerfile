@@ -28,6 +28,4 @@ COPY --from=build /app/app app
 COPY --from=build /app/.env.local .
 ENV NODE_ENV=production
 
-CMD ["./server"]
-
-EXPOSE 3000
+CMD ["./app"]
