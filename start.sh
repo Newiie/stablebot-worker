@@ -6,17 +6,12 @@ echo "██║╚██╔╝██║██╔══██║░╚═══�
 echo "██║░╚═╝░██║██║░░██║██████╔╝░░░██║░░░███████╗██║░░██║"
 echo "╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝"
 REMOVE_IMAGES=false
-PORT=3000
 # Iterate through arguments
 for arg in "$@"
 do
     case $arg in
         --remove-images)
             REMOVE_IMAGES=true
-            shift
-            ;;
-        --port=*)
-            PORT="${arg#*=}"
             shift
             ;;
         *)
@@ -38,4 +33,4 @@ DOCKER_TAG_NAME="stablebot"
 echo "Building docker image"
 docker build -t $DOCKER_TAG_NAME . 
 echo "Deploying Stable Bot"
-docker run -p $PORT:$PORT -d --env PORT=$PORT --expose $PORT $DOCKER_TAG_NAME
+docker run -d  $DOCKER_TAG_NAME
