@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") config()
 import * as envalid from 'envalid'
 import type { IChain, ITokenMetaData, IWallet } from '../types'
 export const envconfig = envalid.cleanEnv(process.env, {
-    ENABLE_TESTNETS: envalid.bool({ default: false }),
+    ENABLE_TESTNETS: envalid.bool({ default: true }),
     PORT: envalid.num({ default: 3000 }),
     BOT_TOKEN: envalid.str(),
     BOT_WEBHOOK_URI: envalid.str(),
