@@ -24,7 +24,7 @@ export class EVM extends Encryption {
         this.chainData = utils.getChain(chainId)
         //@ts-ignore
         this.client = createPublicClient({ chain: this.chains[chainId], transport: http(this.chainData?.rpc) })
-    }
+    } 
     createWallet(mnemonic: string): IWallet {
         const wallet = mnemonicToAccount(mnemonic)
         return {
